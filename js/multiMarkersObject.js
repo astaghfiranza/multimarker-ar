@@ -11,7 +11,7 @@ AFRAME.registerComponent("markers_start", {
     var sceneEl = document.querySelector("a-scene");
 
     //list of the markers
-    for (var i = 1; i < 19; i++) {
+    for (var i = 1; i < 4; i++) {
       //marker
       var url = "resources/markers/pattern-Individual_Blocks-" + i + ".patt";
       markersURLArray.push(url);
@@ -21,7 +21,7 @@ AFRAME.registerComponent("markers_start", {
       //console.log(url);
     }
 
-    for (var k = 0; k < 18; k++) {
+    for (var k = 0; k < 3; k++) {
       var markerEl = document.createElement("a-marker");
       markerEl.setAttribute("type", "pattern");
       markerEl.setAttribute("url", markersURLArray[k]);
@@ -35,11 +35,7 @@ AFRAME.registerComponent("markers_start", {
       //var objectEl = document.createElement("a-assets");
 
       objectEl.setAttribute("id", "image");
-      objectEl.setAttribute("image", {
-        src: markersNameArray[k],
-        width: "3",
-        height: "1.5",
-      });
+      objectEl.setAttribute("image", (src = markersNameArray[k]));
       objectEl.object3D.position.set(0, 0.7, 0);
       objectEl.object3D.rotation.set(-90, 0, 0);
 
